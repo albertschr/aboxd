@@ -5,7 +5,7 @@
 Turn comma-separated strings to ascii-charts.
 Try it live [here](https://daniel-lundin.github.io/aboxd/)
 
-The Code of Front-End Version see in branch **gh-pages** : [here](https://github.com/albertschr/aboxd/tree/gh-pages)
+The Code of Front-End Version is in branch **gh-pages** : [here](https://github.com/albertschr/aboxd/tree/gh-pages)
 
 ![img](assets/aboxd.gif)
 
