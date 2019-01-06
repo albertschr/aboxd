@@ -1,13 +1,19 @@
 (function () {
   'use strict';
 
-  const VERTICAL = "│";
-  const HORIZONTAL = "─";
-  const TOP_LEFT = "┌";
-  const TOP_RIGHT = "┐";
-  const BOTTOM_LEFT = "└";
-  const BOTTOM_RIGHT = "┘";
-
+  // const VERTICAL = "│";
+  // const HORIZONTAL = "─";
+  // const TOP_LEFT = "┌";
+  // const TOP_RIGHT = "┐";
+  // const BOTTOM_LEFT = "└";
+  // const BOTTOM_RIGHT = "┘";
+  const VERTICAL = "|";
+  const HORIZONTAL = "-";
+  const TOP_LEFT = "+";
+  const TOP_RIGHT = "+";
+  const BOTTOM_LEFT = "+";
+  const BOTTOM_RIGHT = "+";
+  
   function repeatStr(chr, length, delimiter = "") {
     return Array.from({ length }, () => chr).join(delimiter);
   }
