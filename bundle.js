@@ -1,19 +1,14 @@
 (function () {
   'use strict';
 
-  // const VERTICAL = "│";
-  // const HORIZONTAL = "─";
-  // const TOP_LEFT = "┌";
-  // const TOP_RIGHT = "┐";
-  // const BOTTOM_LEFT = "└";
-  // const BOTTOM_RIGHT = "┘";
-  const VERTICAL = "|";
-  const HORIZONTAL = "-";
-  const TOP_LEFT = "+";
-  const TOP_RIGHT = "+";
-  const BOTTOM_LEFT = "+";
-  const BOTTOM_RIGHT = "+";
-  
+  var VERTICAL = "|";
+  var HORIZONTAL = "-";
+  var TOP_LEFT = "+";
+  var TOP_RIGHT = "+";
+  var BOTTOM_LEFT = "+";
+  var BOTTOM_RIGHT = "+";
+  var STYLE = "classic"
+
   function repeatStr(chr, length, delimiter = "") {
     return Array.from({ length }, () => chr).join(delimiter);
   }
@@ -200,6 +195,7 @@
           : row
     );
   }
+
   function createChart(str) {
     const boxRows = normalizeInput(str);
     const columnWidths = getColumnWidths(boxRows);
@@ -248,13 +244,39 @@
 
   const input = document.getElementById("input");
   const output = document.getElementById("output");
-
+  const style_btn = document.getElementById("style_btn");
   output.innerText = aboxd_1(input.value || "");
 
+  style_btn.addEventListener("click",evt =>{
+    if(STYLE == "classic"){
+      VERTICAL = "│";
+      HORIZONTAL = "─";
+      TOP_LEFT = "┌";
+      TOP_RIGHT = "┐";
+      BOTTOM_LEFT = "└";
+      BOTTOM_RIGHT = "┘";
+
+      STYLE = "morden";
+
+      output.innerText = aboxd_1(input.value || "");
+    }else{
+      VERTICAL = "|";
+      HORIZONTAL = "-";
+      TOP_LEFT = "+";
+      TOP_RIGHT = "+";
+      BOTTOM_LEFT = "+";
+      BOTTOM_RIGHT = "+";
+
+      STYLE = "classic";
+      
+      output.innerText = aboxd_1(input.value || "");
+    }
+  });
   input.addEventListener("keyup", evt => {
     output.innerText = aboxd_1(input.value || "");
   });
 
-  window.chart = chart;
+
+  // window.chart = chart;
 
 }());
